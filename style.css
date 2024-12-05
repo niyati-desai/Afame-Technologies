@@ -1,0 +1,166 @@
+/* Color Palette */
+:root {
+    --navy-blue: #03045E;
+    --dark-blue: #0077B6;
+    --sky-blue: #00B4D8;
+    --light-blue: #90E0EF;
+    --very-light-blue: #CAF0F8;
+    --black: #000000;
+}
+
+/* General styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Welcome Page */
+.welcome-body {
+    background: var(--light-blue);
+    color: var(--black);
+    text-align: center;
+    animation: backgroundPulse 6s infinite;
+}
+
+.welcome-container {
+    animation: fadeIn 2s ease;
+}
+
+.welcome-title {
+    font-size: 2.5em;
+    color: var(--navy-blue);
+    margin-bottom: 20px;
+}
+
+.get-started-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    background: var(--dark-blue);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.get-started-btn:hover {
+    transform: scale(1.1);
+    background: var(--sky-blue);
+}
+
+/* Calculator Page */
+.calculator-body {
+    background: var(--very-light-blue);
+    animation: backgroundPulse 8s infinite alternate;
+    position: relative;
+}
+
+.background-decor .shape {
+    position: absolute;
+    opacity: 0.15;
+    animation: floatShape 8s infinite ease-in-out;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--dark-blue);
+    top: 10%;
+    left: 15%;
+    animation-delay: 0.5s;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 100px solid var(--sky-blue);
+    top: 70%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.square {
+    width: 150px;
+    height: 150px;
+    background: var(--light-blue);
+    top: 80%;
+    left: 60%;
+    animation-delay: 2s;
+}
+
+.hexagon {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 87px solid var(--navy-blue);
+    position: absolute;
+    top: 30%;
+    right: 15%;
+    transform: rotate(30deg);
+    animation-delay: 1.5s;
+}
+
+@keyframes floatShape {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.calculator {
+    background: var(--sky-blue);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+}
+
+.display {
+    background: var(--dark-blue);
+    color: white;
+    font-size: 2em;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    background: var(--navy-blue);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: var(--dark-blue);
+}
+
+@keyframes backgroundPulse {
+    0%, 100% { background-color: var(--very-light-blue); }
+    50% { background-color: var(--light-blue); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
